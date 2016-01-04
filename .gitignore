@@ -1,5 +1,9 @@
 *.test
 
+# godep
+Godeps/_workspace
+Godeps/Readme
+
 # SQLite Database
 togoo.db
 togoo.db-journal
