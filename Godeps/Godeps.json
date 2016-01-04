@@ -1,0 +1,29 @@
+{
+	"ImportPath": "github.com/ariarijp/togoo",
+	"GoVersion": "go1.5",
+	"Deps": [
+		{
+			"ImportPath": "github.com/codegangsta/cli",
+			"Comment": "1.2.0-179-g0302d39",
+			"Rev": "0302d3914d2a6ad61404584cdae6e6dbc9c03599"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-runewidth",
+			"Comment": "travisish-38-gd96d1bd",
+			"Rev": "d96d1bd051f2bd9e7e43d602782b37b93b1b5666"
+		},
+		{
+			"ImportPath": "github.com/mattn/go-sqlite3",
+			"Comment": "v1.1.0-30-g5510da3",
+			"Rev": "5510da399572b4962c020184bb291120c0a412e2"
+		},
+		{
+			"ImportPath": "github.com/mitchellh/go-homedir",
+			"Rev": "d682a8f0cf139663a984ff12528da460ca963de9"
+		},
+		{
+			"ImportPath": "github.com/olekukonko/tablewriter",
+			"Rev": "48dc4474bcf3e0134e9a64222207b1e020f171e9"
+		}
+	]
+}
