@@ -9,8 +9,10 @@ import (
 func dbPath() string {
 	home, err := homedir.Dir()
 	if err != nil {
+		panic("Home directory does not exist.")
 	}
-	return home + "/togoo.db"
+
+	return home + "/.togoo/togoo.db"
 }
 
 func exists(filename string) bool {

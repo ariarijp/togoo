@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"log"
 	"os"
+	"path"
 
 	"github.com/codegangsta/cli"
 )
@@ -11,7 +12,8 @@ import (
 // CmdInit create database and tables.
 func CmdInit(c *cli.Context) {
 
-	isDatabaseExists := exists(dbPath())
+	dbPath := dbPath()
+	isDatabaseExists := exists(dbPath)
 	isForceMode := c.String("force")
 
 	if isForceMode == "false" && isDatabaseExists {
@@ -20,10 +22,18 @@ func CmdInit(c *cli.Context) {
 	}
 
 	if isForceMode == "true" {
-		os.Remove(dbPath())
+		os.Remove(dbPath)
 	}
 
-	db, err := sql.Open("sqlite3", dbPath())
+	togooDir := path.Dir(dbPath)
+	if !exists(togooDir) {
+		if err := os.Mkdir(togooDir, 0700); err != nil {
+			println("Cannot create " + togooDir)
+			return
+		}
+	}
+
+	db, err := sql.Open("sqlite3", dbPath)
 	if err != nil {
 		log.Fatal(err)
 	}

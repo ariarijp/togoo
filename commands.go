@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/ariarijp/togoo/command"
 	"github.com/codegangsta/cli"
-	"github.com/kakakakakku/togoo/command"
 )
 
 // GlobalFlags is global option for all command.
