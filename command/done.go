@@ -3,8 +3,9 @@ package command
 import (
 	"database/sql"
 	"fmt"
-	"github.com/codegangsta/cli"
 	"log"
+
+	"github.com/codegangsta/cli"
 )
 
 // CmdDone mark task as finished.
@@ -15,7 +16,6 @@ func CmdDone(c *cli.Context) {
 	}
 
 	id := c.Args()[0]
-	fmt.Printf("Task %s is done\n", id)
 
 	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
@@ -27,4 +27,6 @@ func CmdDone(c *cli.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Printf("Task %s is done\n", id)
 }

@@ -3,10 +3,11 @@ package command
 import (
 	"database/sql"
 	"fmt"
-	"github.com/codegangsta/cli"
 	"log"
 	"strconv"
 	"time"
+
+	"github.com/codegangsta/cli"
 )
 
 // CmdAdd add new task.
@@ -17,7 +18,6 @@ func CmdAdd(c *cli.Context) {
 	}
 
 	title := c.Args()[0]
-	fmt.Println("Added new task :", title)
 
 	db, err := sql.Open("sqlite3", dbPath())
 	if err != nil {
@@ -31,4 +31,6 @@ func CmdAdd(c *cli.Context) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println("Added new task :", title)
 }
