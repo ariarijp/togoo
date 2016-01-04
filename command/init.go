@@ -53,4 +53,6 @@ func CmdInit(c *cli.Context) {
 		log.Printf("%q: %s\n", err, sqlStmt)
 		return
 	}
+
+	println(dbPath + " created.")
 }
